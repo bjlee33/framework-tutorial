@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- DEPENDENCY: jQuery -->
+		<script language="javascript" type="text/javascript" src="js/jquery-latest.min.js"></script>
+		<!-- DEPENDENCY: CrxOop -->
+		<script language="javascript" type="text/javascript" src="js/crxOop.strict.min.js"></script>
+		<!-- DEPENDENCY: CrxSecurity -->
+		<script language="javascript" type="text/javascript" src="js/CrxSecurity.min.js"></script>
+		<!-- DEPENDENCY: The renderer -->
+		<script language="javascript" type="text/javascript" src="js/crx_onRender.js"></script>
+		<!-- The Framework -->
+		<script language="javascript" type="text/javascript" src="js/CrxHTMLComponent.min.js"></script>
+		<!-- Our Own Demo Code -->
+		<script language="javascript" type="text/javascript" src="js/myCode.js"></script>
+	</head>
+	<body>
+		<!-- In my code, the #Body element is mandatory, and I believe expected by the renderer currently. -->
+		<div id='Body'>
+			<!--
+			We are going to define an instance of our slider and give it some images. Our slider
+					accepts no child elements. Notice how parameters can be passed as xml attributes
+					or through the crxParameter element. Although crxParameter appears to be a child of the
+					slider, it is not.
+
+			Our slider accepts three parameters, borderColor, aspectRatio, and the images parameter.
+
+			The slider tag name is 'Slider', and the system prefixes 'cre' to it. Tag names, and
+					parameter names are case insensitive.
+			-->
+
+			<creSlider borderStyle="solid" borderColor="red" aspectRatio="1">
+				<!-- The 'images' parameter is an array, and array parameters can not be passed as
+						attributes. On the other hand, we could have passed the borderColor parameter using
+						crxParameter if we wanted. -->
+				<crxParameter name='images'>
+					<crxParameter value='images/01.jpg'></crxParameter>
+					<crxParameter value='images/02.jpg'></crxParameter>
+					<crxParameter value='images/03.jpg'></crxParameter>
+				</crxParameter>
+			</creSlider>
+		</div>
+	</body>
+	</html>
